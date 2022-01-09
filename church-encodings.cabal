@@ -1,0 +1,46 @@
+cabal-version:      2.4
+
+name:               church-encodings
+version:            1.0.0.0
+description:        This package defines Church encodings for
+                    boolean values, natural numbers, pairs and lists, 
+                    and provides a simple test suite for checking
+                    its correctness.
+
+license:            NONE
+author:             Adrián Enríquez Ballester
+maintainer:         adrianen@ucm.es
+extra-source-files: test.hs 
+
+library
+    build-depends:    base >=4.13.0.0
+    hs-source-dirs:   src
+    ghc-options:      -Wall -O2
+    default-language: Haskell2010
+    exposed-modules:  Encoding,
+                      Encoding.BoolChurch,
+                      Encoding.ListChurch,
+                      Encoding.NatChurch,
+                      Encoding.PairChurch
+
+    other-extensions: FunctionalDependencies,
+                      Rank2Types
+
+test-suite church-encodings-test
+    default-language: Haskell2010
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    ghc-options:      -Wall -O2
+    main-is:          Main.hs
+    other-modules:    EncodingSpec,
+                      Encoding.BoolChurchSpec,
+                      Encoding.ListChurchSpec,
+                      Encoding.NatChurchSpec,
+                      Encoding.PairChurchSpec
+
+    other-extensions: GADTs,
+                      ScopedTypeVariables
+
+    build-depends:    base >=4.13.0.0,
+                      hspec,
+                      church-encodings
