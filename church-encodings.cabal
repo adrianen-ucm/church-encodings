@@ -4,8 +4,7 @@ name:               church-encodings
 version:            1.0.0.0
 description:        This package defines Church encodings for
                     boolean values, natural numbers, pairs and lists, 
-                    and provides a simple test suite for checking
-                    its correctness.
+                    and provides a simple test suite.
 
 license:            NONE
 author:             Adrián Enríquez Ballester
