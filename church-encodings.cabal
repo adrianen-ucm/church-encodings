@@ -9,7 +9,7 @@ description:        This package defines Church encodings for
 license:            NONE
 author:             Adrián Enríquez Ballester
 maintainer:         adrianen@ucm.es
-extra-source-files: test.hs 
+extra-source-files: test.sh
 
 library
     build-depends:    base >=4.13.0.0
